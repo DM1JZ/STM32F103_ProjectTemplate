@@ -18,7 +18,7 @@
 ##
 
 BINARY = miniblink
-
+OBJS=delay.o
 OPENCM3_DIR=../libopencm3
 
 LDSCRIPT = ../stm32-h103.ld

@@ -27,14 +27,14 @@ ARCH_FLAGS	= -mthumb -mcpu=cortex-m3 $(FP_FLAGS) -mfix-cortex-m3-ldrd
 ################################################################################
 # OpenOCD specific variables
 
-OOCD		?= openocd
-OOCD_INTERFACE	?= flossjtag
-OOCD_TARGET	?= stm32f1x
+OOCD		?= 
+OOCD_INTERFACE	?= 
+OOCD_TARGET	?= 
 
 ################################################################################
 # Black Magic Probe specific variables
 # Set the BMP_PORT to a serial port and then BMP is used for flashing
-BMP_PORT	?=
+BMP_PORT	?= /dev/ttyACM0
 
 ################################################################################
 # texane/stlink specific variables

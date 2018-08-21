@@ -44,7 +44,7 @@ STYLECHECKFLAGS	:= --no-tree -f --terse --mailback
 STYLECHECKFILES	:= $(shell find . -name '*.[ch]')
 OPT		:= -Os
 DEBUG		:= -ggdb3
-CSTD		?= -std=c99
+CSTD		?= -std=c11
 
 
 ###############################################################################

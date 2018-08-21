@@ -19,27 +19,34 @@
 
 #include <libopencm3/stm32/rcc.h>
 #include <libopencm3/stm32/gpio.h>
+#include "delay.h"
 
 static void gpio_setup(void)
 {
+	rcc_periph_clock_enable(RCC_GPIOC);
 	gpio_set_mode(GPIOC, GPIO_MODE_OUTPUT_2_MHZ, GPIO_CNF_OUTPUT_PUSHPULL, GPIO13);
 }
 
 int main(void)
 {
-	int i;
+	//Setup clock
+	rcc_clock_setup_in_hse_8mhz_out_72mhz();
 
 	gpio_setup();
+	initSysTick();
 
 	/* Blink the LED (PC13) on the board. */
 	while (1) 
 	{
 		gpio_toggle(GPIOC, GPIO13);	/* LED on/off */
+		delay_ms(1000);
 		
-		for (i = 0; i < 800000; i++)	/* Wait a bit. */
+		/*
+		for (i = 0; i < 800000; i++)	// Wait a bit.
 		{
 			__asm__("nop");
 		}
+		*/
 	}
 
 	return 0;
