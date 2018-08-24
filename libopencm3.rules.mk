@@ -94,8 +94,7 @@ include $(OPENCM3_DIR)/mk/genlink-config.mk
 endif
 
 OPENCM3_SCRIPT_DIR = $(OPENCM3_DIR)/scripts
-EXAMPLES_SCRIPT_DIR	= $(OPENCM3_DIR)/../scripts
-
+SCRIPTS_DIR = ../scripts
 ###############################################################################
 # C flags
 
@@ -255,7 +254,7 @@ else
 	@printf "  GDB   $(*).elf (flash)\n"
 	$(GDB) --batch \
 		   -ex 'target extended-remote $(BMP_PORT)' \
-		   -x $(EXAMPLES_SCRIPT_DIR)/black_magic_probe_flash.scr \
+		   -x $(SCRIPTS_DIR)/black_magic_probe_flash.scr \
 		   $(*).elf
 endif
 

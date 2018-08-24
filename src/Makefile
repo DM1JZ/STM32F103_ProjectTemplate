@@ -17,7 +17,7 @@
 ## along with this library.  If not, see <http://www.gnu.org/licenses/>.
 ##
 
-BINARY = miniblink
+BINARY = main
 OBJS=delay.o
 OPENCM3_DIR=../libopencm3
 
