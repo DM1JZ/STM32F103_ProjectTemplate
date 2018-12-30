@@ -8,6 +8,7 @@ This is just a small helper repo to quickly create new test projects. I recommen
 ## Build instructions
 dependency for libopencm3 build: python
 
+```shell
 git submodule init
 git submodule update
 cd libopencm3
@@ -15,16 +16,21 @@ make
 
 cd ../src/
 make
+```
 
 ## Flash instructions
-Configure programmer hardware in libopencm3.target.mk
+Configure programmer hardware in `libopencm3.target.mk`
 
 For BlackMagicProbe:
-BMP_Port ?= /dev/ttyACM0 (BMP GDB server port)
+`BMP_Port ?= /dev/ttyACM0 (BMP GDB server port)`
 
 Compile with:
- make
+`make`
 
 Program with:
- make flash
+`make flash`
+
+## Udev Rules and permissions
+Copy file `99-blackmagicprobe.rules` in `udev` to `/etc/udev/rules.d/` and reload udev rules
+User has to be member of group `dialout`
 
